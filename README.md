@@ -40,6 +40,7 @@ src/
 ├── app/              # Next.js App Router pages
 ├── components/       # Reusable UI components
 │   ├── KanbanBoard.tsx   # Main board logic
+│   ├── Header.tsx        # Simple Header
 │   ├── ColumnContainer.tsx # Column droppable area
 │   └── TaskCard.tsx      # Draggable task item
 ├── store/            # Global state (Zustand)
