@@ -22,7 +22,6 @@ import { useShallow } from "zustand/react/shallow";
 
 export default function KanbanBoard() {
   const columns = useKanbanStore(useShallow((state) => state.columns));
-  const tasks = useKanbanStore(useShallow((state) => state.tasks));
   const actions = useKanbanStore(
     useShallow((state) => ({
       addColumn: state.addColumn,
@@ -49,19 +48,6 @@ export default function KanbanBoard() {
 
   return (
     <div className="min-h-screen w-full bg-[#0f1117] text-white">
-      <header className="border-b border-white/10 bg-[#0f1117]/80 backdrop-blur-md sticky top-0 z-10 px-8 py-4 flex items-center gap-3">
-        <div className="flex items-center gap-2.5">
-          <h1 className="text-lg font-semibold tracking-tight text-white/90">
-            Kanban Board
-          </h1>
-        </div>
-        <div className="ml-auto flex items-center gap-2 text-xs text-white/40">
-          <span>{columns.length} columns</span>
-          <span>·</span>
-          <span>{tasks.length} tasks</span>
-        </div>
-      </header>
-
       <section className="flex items-start overflow-x-auto overflow-y-hidden px-8 py-6 min-h-[calc(100vh-65px)]">
         <DndContext
           sensors={sensors}
