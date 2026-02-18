@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📋 Modern Kanban Board
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Zustand](https://img.shields.io/badge/State_Management-Zustand-orange?style=for-the-badge)
 
-First, run the development server:
+A fully functional, responsive Kanban task management application built with **Next.js (App Router)** and **TypeScript**. 
+This project features a complex Drag-and-Drop interface utilizing `@dnd-kit` and robust state management with **Zustand**, including local storage persistence.
+
+---
+
+## 🚀 Features
+
+- **Drag and Drop Interface:** Smooth drag-and-drop functionality for tasks and columns using `@dnd-kit`.
+- **State Persistence:** Data is automatically saved to `localStorage` via Zustand middleware, ensuring tasks aren't lost on refresh.
+- **Column Management:** Create, rename, and delete columns dynamically.
+- **Task Management:** Add, edit, and remove tasks within columns.
+- **Responsive Design:** Optimized for various screen sizes using Tailwind CSS.
+- **Optimistic UI:** Instant visual updates for better user experience.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Next.js 16+](https://nextjs.org/) (App Router)
+- **Language:** [TypeScript](https://www.typescriptlang.org/) for strict type safety.
+- **State Management:** [Zustand](https://github.com/pmndrs/zustand) (with persist middleware).
+- **Drag & Drop:** [@dnd-kit](https://dndkit.com/) (Core, Sortable, Utilities).
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/).
+- **Icons:** [Lucide React](https://lucide.dev/).
+- **Utilities:** `uuid` for unique ID generation.
+
+---
+
+## 📂 Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+src/
+├── app/              # Next.js App Router pages
+├── components/       # Reusable UI components
+│   ├── KanbanBoard.tsx   # Main board logic
+│   ├── ColumnContainer.tsx # Column droppable area
+│   └── TaskCard.tsx      # Draggable task item
+├── store/            # Global state (Zustand)
+│   └── useStore.ts   # Store configuration & actions
+└── types/            # TypeScript interfaces & types
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚡ Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Follow these steps to run the project locally:
 
-## Learn More
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/kanban-board.git
+   cd kanban-board
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Open your browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the app in action.
